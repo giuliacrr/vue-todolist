@@ -38,7 +38,7 @@ Vue.createApp({
     },
     //Add a task
     addToDoTask() {
-      //We create a clone of the object newTasks to make the original array lose its reactivity
+      //We create a clone of the object newTasks with the spread operator (...) to make the original array lose its reactivity
       const clonedTask = { ...this.newTasks };
       //and makes us print the things as they're meant to be
       this.list.push(clonedTask);

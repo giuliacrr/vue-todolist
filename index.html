@@ -28,8 +28,8 @@
       <div class="m-auto bg-div rounded p-3">
         <!--input bar-->
         <div class="input-group mb-3">
-          <input type="text" v-model="newTasks.text" class="form-control" placeholder="Write here what to do"
-            aria-describedby="button-addon2">
+          <input type="text" v-model="newTasks.text" @keyup.enter="addToDoTask" class="form-control"
+            placeholder="Write here what to do" aria-describedby="button-addon2">
           <button class="btn btn-outline-secondary button-bg-ow" @click="addToDoTask" type="button" id="button-addon2">
             <i class="fa-solid fa-plus"></i>
           </button>

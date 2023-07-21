@@ -45,9 +45,15 @@
                 {{task.text}}
               </div>
               <!--Button to delete-->
-              <button type="button" class="btn-close" aria-label="Close"></button>
+              <button type="button" class="btn-close" @click="deleteTask(i)" aria-label="Close"></button>
             </li>
           </ul>
+        </div>
+        <!--Delete all button-->
+        <div class="text-center pt-3">
+          <button type="button" @click="deleteAllTasks()" class="btn btn-danger"><i class="fa-solid fa-trash"></i>
+            Delete
+            All</button>
         </div>
       </div>
     </main>

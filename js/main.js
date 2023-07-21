@@ -42,6 +42,12 @@ Vue.createApp({
       const clonedTask = { ...this.newTasks };
       //and makes us print the things as they're meant to be
       this.list.push(clonedTask);
+    },
+    deleteTask(i) {
+      this.list.splice(i, 1);
+    },
+    deleteAllTasks() {
+      this.list.splice(0, this.list.length);
     }
   }
 },

@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body-bg {
+  background-image: url(https://images.wallpaperscraft.com/image/single/mountains_forest_clouds_144711_1920x1080.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+header {
+  color: #322d27;
+}
+
+.bg-div {
+  max-width: 1000px;
+  color: #322d27;
+  background-color: rgb(255, 255, 255, 0.3);
+}
+
+.button-bg-ow {
+  background-color: #283941;
+}
+
+.fa-plus {
+  color: #e4a177;
+}
+
+.number-list {
+  color: #e4a177;
+}
+
+.btn-close {
+  display: none;
+}
+
+.todo-element:hover .btn-close {
+  display: inline-block;
+}

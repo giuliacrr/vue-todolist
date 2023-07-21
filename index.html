@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Vue-->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!--Stylesheet-->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <title>To do list | Vue</title>
+</head>
+
+<body class="body-bg ">
+  <div id="app">
+    <!--..........HEADER..........-->
+    <header>
+      <h1 class="fw-bold display-4 text-center p-5">To do list</h1>
+    </header>
+    <!--..........MAIN..........-->
+    <main>
+      <div class="m-auto bg-div rounded p-3">
+        <!--input bar-->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Write here what to do" aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary button-bg-ow" type="button" @click="addToList" id="button-addon2">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <!--To do list-->
+        <div>
+          <ul class="list-group">
+            <!--Cycle-->
+            <li v-for="(element, i) in list"
+              class="list-group-item fs-5 text d-flex justify-content-between todo-element" aria-current="true">
+              <div v-bind:class="(element.done === true ? 'text-decoration-line-through' : '')"
+                @click="lineThrough(element)">
+                <span class="number-list fw-bold">{{i+1 +")"}}</span>
+                {{element.text}}
+              </div>
+              <!--Button to delete-->
+              <button type="button" class="btn-close" aria-label="Close"></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <!--..........FOOTER..........-->
+    <footer></footer>
+  </div>
+  <!--..........BOOTSTRAP JS..........-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <!--..........JS LINK..........-->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

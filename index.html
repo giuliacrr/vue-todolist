@@ -28,8 +28,9 @@
       <div class="m-auto bg-div rounded p-3">
         <!--input bar-->
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Write here what to do" aria-describedby="button-addon2">
-          <button class="btn btn-outline-secondary button-bg-ow" type="button" @click="addToList" id="button-addon2">
+          <input type="text" v-model="newTasks.text" class="form-control" placeholder="Write here what to do"
+            aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary button-bg-ow" @click="addToDoTask" type="button" id="button-addon2">
             <i class="fa-solid fa-plus"></i>
           </button>
         </div>
@@ -37,12 +38,11 @@
         <div>
           <ul class="list-group">
             <!--Cycle-->
-            <li v-for="(element, i) in list"
-              class="list-group-item fs-5 text d-flex justify-content-between todo-element" aria-current="true">
-              <div v-bind:class="(element.done === true ? 'text-decoration-line-through' : '')"
-                @click="lineThrough(element)">
+            <li v-for="(task, i) in list" class="list-group-item fs-5 text d-flex justify-content-between todo-element"
+              aria-current="true">
+              <div v-bind:class="(task.done === true ? 'text-decoration-line-through' : '')" @click="lineThrough(task)">
                 <span class="number-list fw-bold">{{i+1 +")"}}</span>
-                {{element.text}}
+                {{task.text}}
               </div>
               <!--Button to delete-->
               <button type="button" class="btn-close" aria-label="Close"></button>

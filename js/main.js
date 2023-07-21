@@ -5,6 +5,9 @@ Vue.createApp({
   data() {
     return {
       //List
+      newTasks: {
+        text: "",
+      },
       list: [
         {
           id: 0,
@@ -25,13 +28,21 @@ Vue.createApp({
     };
   },
   methods: {
-    lineThrough(element) {
-      if (element.done === true) {
-        element.done = false;
+    //Line Through condition
+    lineThrough(task) {
+      if (task.done === true) {
+        task.done = false;
       } else {
-        element.done = true;
+        task.done = true;
       }
     },
+    //Add a task
+    addToDoTask() {
+      //We create a clone of the object newTasks to make the original array lose its reactivity
+      const clonedTask = { ...this.newTasks };
+      //and makes us print the things as they're meant to be
+      this.list.push(clonedTask);
+    }
   }
 },
 ).mount("#app");
